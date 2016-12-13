@@ -1,0 +1,12 @@
+﻿<Window x:Class="Meezan.Windows.winMedicalExpense"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="winMedicalExpense" Height="620" Width="1020" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" >
+    <Grid>
+        <WindowsFormsHost HorizontalAlignment="Left" Height="519" Margin="0,71,0,0" VerticalAlignment="Top" Width="1012">
+            <rv:ReportViewer x:Name="messReportViewer"></rv:ReportViewer>
+        </WindowsFormsHost>
+
+    </Grid>
+</Window>

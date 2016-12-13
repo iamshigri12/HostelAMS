@@ -1,0 +1,65 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:HelperClasses="clr-namespace:Meezan.HelperClasses" mc:Ignorable="d" x:Class="Meezan.Windows.winSearchPopUp"
+        Title="winSearchPopUp" Height="500" Width="800" Loaded="Window_Loaded_1"  Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"  >
+    <Window.Resources>
+        <Style x:Key="textboxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="30"/>
+
+        </Style>
+
+
+        <Style x:Key="textblockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+        </Style>
+
+        <CollectionViewSource x:Key="searchedStudentInfoViewSource" d:DesignSource="{d:DesignInstance {x:Type HelperClasses:searchedStudentInfo}, CreateList=True}"/>
+
+    </Window.Resources>
+
+
+    <!--<Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF16568A" Offset="0"/>
+            <GradientStop Color="#FF2E6593" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>-->
+
+
+    <Grid DataContext="{StaticResource searchedStudentInfoViewSource}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="399*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Name :" Style="{StaticResource textblockStyle}"/>
+        <TextBox x:Name="txtSearchbox" Grid.Column="1" Style="{StaticResource textboxStyle}" Grid.ColumnSpan="2" Margin="7,20,183,21" Width="Auto"/>
+        <Button Grid.Column="2" Width="60" Height="45" IsDefault="True" Name="btnSearch" Click="btnSearch_Click_1">
+            <Image Source="/Meezan;component/Images/Search_icon.png"/>
+        </Button>
+        <DataGrid x:Name="searchedStudentInfoDataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="3" GridLinesVisibility="Horizontal" EnableRowVirtualization="True" ItemsSource="{Binding}" Grid.Row="1"  SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="searchedStudentInfoDataGrid_MouseDoubleClick_1"  RowDetailsVisibilityMode="VisibleWhenSelected" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding name}" Header="Name" Width="auto"/>
+                <DataGridTextColumn x:Name="fatherNameColumn" Binding="{Binding fatherName}" Header="Father Name" Width="auto"/>
+                <DataGridTextColumn x:Name="admissionNoColumn" Binding="{Binding admissionNo}" Header="Admission No" Width="auto"/>
+                <DataGridTextColumn x:Name="domicleColumn" Binding="{Binding domicle}" Header="Domicle" Width="auto"/>
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

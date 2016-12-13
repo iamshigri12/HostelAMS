@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB5FDC4B-FBD2-4880-9E92-D80BEE696B7A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Meezan</RootNamespace>
+    <AssemblyName>Meezan</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="HelperClasses\DBHelper.cs" />
+    <Compile Include="HelperClasses\receiptDataGridDataSourceHelper.cs" />
+    <Compile Include="HelperClasses\searchedStudentInfo.cs" />
+    <Compile Include="MeezanDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MeezanDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_USERInfo.cs" />
+    <Compile Include="Windows\printTemplate.xaml.cs">
+      <DependentUpon>printTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winMedicalExpense.xaml.cs">
+      <DependentUpon>winMedicalExpense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winNewStudent.xaml.cs">
+      <DependentUpon>winNewStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winNewUser.xaml.cs">
+      <DependentUpon>winNewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winPasswordChange.xaml.cs">
+      <DependentUpon>winPasswordChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winReciept.xaml.cs">
+      <DependentUpon>winReciept.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\winSearchPopUp.xaml.cs">
+      <DependentUpon>winSearchPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winMainWindow.xaml.cs">
+      <DependentUpon>winMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\printTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winMedicalExpense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winNewStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winNewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winPasswordChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winReciept.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\winSearchPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\expenseMessReport.rdlc" />
+    <None Include="MeezanDBDataSet.xsc">
+      <DependentUpon>MeezanDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MeezanDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MeezanDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MeezanDBDataSet.xss">
+      <DependentUpon>MeezanDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Meezan.HelperClasses.receiptDataGridDataSourceHelper.datasource" />
+    <None Include="Properties\DataSources\Meezan.HelperClasses.searchedStudentInfo.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo64x64.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo200x128.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Aqua Blue.png" />
+    <Resource Include="Images\delta.png" />
+    <Resource Include="Images\Khapulufort.png" />
+    <Resource Include="Images\ShigarRoad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon200x200.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_payable200x200.tif" />
+    <Resource Include="Images\icon_student200x200.tif" />
+    <Resource Include="Images\recievable200x200.tif" />
+    <Resource Include="Images\report_icon200x200.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\education_icon200x200.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\view_icon200x200.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cancel_icon.png" />
+    <Resource Include="Images\reset_icon.ico" />
+    <Resource Include="Images\save_icon.png" />
+    <Resource Include="Images\Search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\deletebnt32x32.tif" />
+    <Resource Include="Images\deletebtn64x64.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ReportHeader.JPG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
